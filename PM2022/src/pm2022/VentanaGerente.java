@@ -40,11 +40,11 @@ public class VentanaGerente extends javax.swing.JFrame {
         jdskPrincipal.setLayout(jdskPrincipalLayout);
         jdskPrincipalLayout.setHorizontalGroup(
             jdskPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 609, Short.MAX_VALUE)
+            .addGap(0, 614, Short.MAX_VALUE)
         );
         jdskPrincipalLayout.setVerticalGroup(
             jdskPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 435, Short.MAX_VALUE)
+            .addGap(0, 439, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Gestionar");
