@@ -33,14 +33,8 @@ public class RegistroFrm extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        txtPerfil = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        txtCorreo = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
         lblInicioSesion = new javax.swing.JLabel();
         cbMostrar = new javax.swing.JCheckBox();
         cbMostrarConfirm = new javax.swing.JCheckBox();
@@ -75,29 +69,11 @@ public class RegistroFrm extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Cedula");
 
-        txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtUsuario.setForeground(new java.awt.Color(102, 102, 102));
-
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Usuario");
-
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Contraseña");
 
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Confirmar contraseña");
-
-        txtPerfil.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtPerfil.setForeground(new java.awt.Color(102, 102, 102));
-
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Perfil");
-
-        txtCorreo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtCorreo.setForeground(new java.awt.Color(102, 102, 102));
-
-        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("Correo");
 
         lblInicioSesion.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblInicioSesion.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,15 +128,8 @@ public class RegistroFrm extends javax.swing.JFrame {
                             .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17)
                             .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel24)
-                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jbtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel22)
-                                    .addComponent(txtPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(94, 94, 94)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,11 +146,6 @@ public class RegistroFrm extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbMostrarConfirm))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(94, 94, 94)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel19)
-                                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(lblInicioSesion)))))
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -195,15 +159,9 @@ public class RegistroFrm extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblRegistro)
                         .addGap(41, 41, 41)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -227,17 +185,7 @@ public class RegistroFrm extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(cbMostrarConfirm))))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPerfil, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel24)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(39, 39, 39)
+                        .addGap(111, 111, 111)
                         .addComponent(jbtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)))
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -288,11 +236,8 @@ public class RegistroFrm extends javax.swing.JFrame {
         txtCedula.setText("");
         txtNombre.setText("");
         txtApellido.setText("");
-        txtPerfil.setText("");
         txtPassword.setText("");
         txtPasswordConfirm.setText("");
-        txtUsuario.setText("");
-        txtCorreo.setText("");
     }
 
     private void jbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarActionPerformed
@@ -399,23 +344,17 @@ public class RegistroFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbtnGuardar;
     private javax.swing.JLabel lblInicioSesion;
     private javax.swing.JLabel lblRegistro;
     private javax.swing.JTextField txtApellido;
     public javax.swing.JTextField txtCedula;
-    private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JPasswordField txtPasswordConfirm;
-    private javax.swing.JTextField txtPerfil;
-    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
 }
