@@ -1,7 +1,4 @@
-package pmanejo;
-
-
-
+package pm2022;
 
 import java.sql.Connection;
 import javax.swing.ImageIcon;
