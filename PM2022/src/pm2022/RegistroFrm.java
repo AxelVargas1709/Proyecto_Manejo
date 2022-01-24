@@ -1,4 +1,4 @@
-package pmanejo;
+package pm2022;
 
 import java.awt.Color;
 import javax.swing.ImageIcon;
