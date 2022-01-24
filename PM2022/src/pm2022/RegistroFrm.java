@@ -1,24 +1,38 @@
 package pm2022;
 
+//import BaseDd.BDEmpleados;
+//import BaseDd.empleados;
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class RegistroFrm extends javax.swing.JFrame {
 
+    DefaultComboBoxModel modeloCB = new DefaultComboBoxModel();
     private String imgPathLogo = "/icons/logo.png";
-//    private BD mBd;
-//    private encoder mEncoder;
+//    private BDEmpleados mBd;
 //    private Validaciones mValidaciones;
 
     public RegistroFrm() {
         initComponents();
-//        mBd = new BD("login", "root", "");
-//        mEncoder = new encoder();
+//        mBd = new BDEmpleados("login", "root", "");
 //        mValidaciones = new Validaciones();
         this.setSize(778, 581);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        cargarCombo();
+    }
+
+    private void cargarCombo() {
+        String[] modelo = {
+            "GERENTE", "VENDEDOR", "CONTADOR"
+        };
+        for (String i : modelo) {
+            modeloCB.addElement(i);
+        }
+        jcbdatos.setModel(modeloCB);
     }
 
     @SuppressWarnings("unchecked")
@@ -33,14 +47,20 @@ public class RegistroFrm extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        txtTelefono = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        txtSueldo = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
         lblInicioSesion = new javax.swing.JLabel();
         cbMostrar = new javax.swing.JCheckBox();
         cbMostrarConfirm = new javax.swing.JCheckBox();
         txtPassword = new javax.swing.JPasswordField();
         txtPasswordConfirm = new javax.swing.JPasswordField();
         jbtnGuardar = new javax.swing.JButton();
+        jcbdatos = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,11 +89,26 @@ public class RegistroFrm extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Cedula");
 
+        txtTelefono.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(102, 102, 102));
+
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Telefono");
+
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Contraseña");
 
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
         jLabel21.setText("Confirmar contraseña");
+
+        txtSueldo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtSueldo.setForeground(new java.awt.Color(102, 102, 102));
+
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setText("Sueldo");
+
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setText("Cargo");
 
         lblInicioSesion.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         lblInicioSesion.setForeground(new java.awt.Color(255, 255, 255));
@@ -110,6 +145,12 @@ public class RegistroFrm extends javax.swing.JFrame {
             }
         });
 
+        jcbdatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbdatosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -121,15 +162,22 @@ public class RegistroFrm extends javax.swing.JFrame {
                         .addComponent(lblRegistro))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(81, 81, 81)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
                             .addComponent(jLabel15)
                             .addComponent(jLabel16)
-                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
                             .addComponent(jLabel17)
-                            .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jbtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCedula, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                            .addComponent(jLabel24)
+                            .addComponent(jbtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jcbdatos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel22)
+                                    .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(94, 94, 94)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,6 +194,11 @@ public class RegistroFrm extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbMostrarConfirm))
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel19)
+                                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(29, 29, 29)
                                 .addComponent(lblInicioSesion)))))
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -159,9 +212,15 @@ public class RegistroFrm extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lblRegistro)
                         .addGap(41, 41, 41)
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -185,7 +244,17 @@ public class RegistroFrm extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtPasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(cbMostrarConfirm))))
-                        .addGap(111, 111, 111)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jcbdatos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(31, 31, 31)
                         .addComponent(jbtnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)))
                 .addContainerGap(58, Short.MAX_VALUE))
@@ -236,63 +305,52 @@ public class RegistroFrm extends javax.swing.JFrame {
         txtCedula.setText("");
         txtNombre.setText("");
         txtApellido.setText("");
+        txtSueldo.setText("");
         txtPassword.setText("");
         txtPasswordConfirm.setText("");
+        txtTelefono.setText("");
     }
 
     private void jbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarActionPerformed
         // TODO add your handling code here:
-        /*
-        if (!txtNombre.getText().trim().equals("") && !txtCedula.getText().trim().equals("") && !txtApellido.getText().trim().equals("")
-                && !txtCorreo.getText().trim().equals("") && !txtUsuario.getText().trim().equals("") && !txtPerfil.getText().trim().equals("")
-                && !txtPassword.getText().trim().equals("") && !txtPasswordConfirm.getText().trim().equals("")) {
-            if (mValidaciones.validar(txtCedula.getText().trim())) {
-                if (mValidaciones.ValidarEmail(txtCorreo.getText().trim())) {
-                    if (txtPassword.getText().trim().equals(txtPasswordConfirm.getText().trim())) {
-                       // if (txtPerfil.getText().length() == 20) {
-                            usuario mUsuario = new usuario();
-                            mUsuario.setNombre(txtNombre.getText().trim());
-                            mUsuario.setCedula(txtCedula.getText().trim());
-                            mUsuario.setApellido(txtApellido.getText().trim());
-                            mUsuario.setContrasena(mEncoder.ecnode(txtPassword.getText().trim()));
-                            mUsuario.setPerfil(txtPerfil.getText().trim());
-                            mUsuario.setUsuario(txtUsuario.getText().trim());
-                            mUsuario.setCorreo(txtCorreo.getText().trim());
-                            
-
-                            if (mBd.Conectar()) {
-//                                if (mBd.ExisteCedula(txtCedula.getText().trim())) {
-//                                if (!mBd.ExisteCedula(txtCedula.getText().trim()).equals(txtCedula.getText().trim())) {
-                                    if (mBd.AddUser(mUsuario)) {
-                                        JOptionPane.showMessageDialog(null, "Alta usuario exitosa!");
-                                        limpliartexto();
-                                    }
-//                                }
-//                                } else {
-//                                    JOptionPane.showMessageDialog(null, "Cedula existente");
-//                                }
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Error al conectar");
-                            }
-//                        } else {
-//                            JOptionPane.showMessageDialog(null, "Número de telefono inválido");
+//        String mensaje;
+//        mensaje = jcbdatos.getSelectedItem().toString();
+//        if (!txtNombre.getText().trim().equals("") && !txtCedula.getText().trim().equals("") && !txtApellido.getText().trim().equals("")
+//                && !txtTelefono.getText().trim().equals("") && !txtSueldo.getText().trim().equals("")
+//                && !txtPassword.getText().trim().equals("") && !txtPasswordConfirm.getText().trim().equals("")) {
+//            if (txtPassword.getText().trim().equals(txtPasswordConfirm.getText().trim())) {
+//                //if (jcbdatos.getSelectedItem() != jcbdatos.getSelectedItem()) {
+//                    empleados mUsuario = new empleados();
+//                    mUsuario.setCedula_emp(txtCedula.getText().trim());
+//                    mUsuario.setNombre_emp(txtNombre.getText().trim());
+//                    mUsuario.setApellido_emp(txtApellido.getText().trim());
+//                    mUsuario.setContrasena_emp(txtPassword.getText().trim());
+//                    mUsuario.setTelefono_emp(txtTelefono.getText().trim());
+//                    mUsuario.setSueldo_emp(Integer.parseInt(txtSueldo.getText().trim()));
+//                    mUsuario.setCargo_emp(mensaje);
+//                    if (mBd.Conectar()) {
+//                        if (mBd.AddUserEmp(mUsuario)) {
+//                            JOptionPane.showMessageDialog(null, "Alta usuario exitosa!");
+//                            limpliartexto();
 //                        }
-                    } else {
-                        JOptionPane.showMessageDialog(null, "las contraseñas no coinciden");
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "El correo es inválido");
-                    txtCorreo.setText("");
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Ingrese una cedula valida");
-                txtCedula.setText("");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Llena todos los campos");
-        }
-       */
+//                    } else {
+//                        JOptionPane.showMessageDialog(null, "Error al conectar");
+//                    }
+////                } else {
+////                    JOptionPane.showMessageDialog(null, "Debe Seleccionar cargo");
+////                }
+//            } else {
+//                JOptionPane.showMessageDialog(null, "las contraseñas no coinciden");
+//            }
+//
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Llena todos los campos");
+//        }
+
     }//GEN-LAST:event_jbtnGuardarActionPerformed
+
+    private void jcbdatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbdatosActionPerformed
+    }//GEN-LAST:event_jcbdatosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -329,6 +387,8 @@ public class RegistroFrm extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -344,10 +404,14 @@ public class RegistroFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jbtnGuardar;
+    private javax.swing.JComboBox<String> jcbdatos;
     private javax.swing.JLabel lblInicioSesion;
     private javax.swing.JLabel lblRegistro;
     private javax.swing.JTextField txtApellido;
@@ -355,6 +419,8 @@ public class RegistroFrm extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombre;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JPasswordField txtPasswordConfirm;
+    private javax.swing.JTextField txtSueldo;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 
 }
