@@ -9,12 +9,12 @@ package pm2022;
  *
  * @author PERSONAL
  */
-public class VentanaGerente extends javax.swing.JFrame {
+public class VentanaVendedor extends javax.swing.JFrame {
 
     /**
-     * Creates new form VentanaGerente
+     * Creates new form VentanaVendedor
      */
-    public VentanaGerente() {
+    public VentanaVendedor() {
         initComponents();
     }
 
@@ -27,43 +27,37 @@ public class VentanaGerente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jdskPrincipal = new javax.swing.JDesktopPane();
+        jdskprincipal = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jmenuEmpleados = new javax.swing.JMenuItem();
-        jmenuProductos = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jdskPrincipalLayout = new javax.swing.GroupLayout(jdskPrincipal);
-        jdskPrincipal.setLayout(jdskPrincipalLayout);
-        jdskPrincipalLayout.setHorizontalGroup(
-            jdskPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 614, Short.MAX_VALUE)
+        javax.swing.GroupLayout jdskprincipalLayout = new javax.swing.GroupLayout(jdskprincipal);
+        jdskprincipal.setLayout(jdskprincipalLayout);
+        jdskprincipalLayout.setHorizontalGroup(
+            jdskprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 609, Short.MAX_VALUE)
         );
-        jdskPrincipalLayout.setVerticalGroup(
-            jdskPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+        jdskprincipalLayout.setVerticalGroup(
+            jdskprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 435, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Gestionar");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
-            }
-        });
+        jMenu1.setText("Opciones");
 
-        jmenuEmpleados.setText("Empleados");
-        jmenuEmpleados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmenuEmpleadosActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jmenuEmpleados);
+        jMenuItem1.setText("Listar Productos");
+        jMenu1.add(jMenuItem1);
 
-        jmenuProductos.setText("Productos");
-        jMenu1.add(jmenuProductos);
+        jMenuItem2.setText("Facturar");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setText("Mostrar Facturas");
+        jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
 
@@ -76,23 +70,15 @@ public class VentanaGerente extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdskPrincipal)
+            .addComponent(jdskprincipal)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jdskPrincipal)
+            .addComponent(jdskprincipal)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu1ActionPerformed
-
-    private void jmenuEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuEmpleadosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmenuEmpleadosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,13 +97,13 @@ public class VentanaGerente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -125,7 +111,7 @@ public class VentanaGerente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaGerente().setVisible(true);
+                new VentanaVendedor().setVisible(true);
             }
         });
     }
@@ -134,8 +120,9 @@ public class VentanaGerente extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JDesktopPane jdskPrincipal;
-    private javax.swing.JMenuItem jmenuEmpleados;
-    private javax.swing.JMenuItem jmenuProductos;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JDesktopPane jdskprincipal;
     // End of variables declaration//GEN-END:variables
 }
