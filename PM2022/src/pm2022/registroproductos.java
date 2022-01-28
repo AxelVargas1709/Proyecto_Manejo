@@ -23,7 +23,7 @@ import javax.swing.DefaultComboBoxModel;
  *
  * @author PERSONAL
  */
-public class registroproductos extends javax.swing.JFrame {
+public class registroproductos extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form empleados

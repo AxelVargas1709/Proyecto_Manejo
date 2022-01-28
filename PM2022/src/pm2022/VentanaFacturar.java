@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pmanejo;
+package pm2022;
 
 import BaseDd.BDClientes;
 import BaseDd.Conexion;
@@ -34,7 +34,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author PERSONAL
  */
-public class VentanaFacturar extends javax.swing.JFrame {
+public class VentanaFacturar extends javax.swing.JInternalFrame {
 
     
     DefaultTableModel modelo = new DefaultTableModel();

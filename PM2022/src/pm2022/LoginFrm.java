@@ -1,13 +1,17 @@
 package pm2022;
 
+
+import BaseDd.BDEmpleados;
+import BaseDd.*;
 import java.sql.Connection;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class LoginFrm extends javax.swing.JFrame {
-//
-//    Conexion cc = new Conexion();
-//    Connection cn = cc.conectar();
+
+    Conexion cc = new Conexion();
+    Connection cn = cc.conectar();
+    private BDEmpleados mBd;
     private String imgPathIniciarSesion = "/icons/enter.png";
     private String imgPathLogo = "/icons/logo.png";
     private String imgPathUserIocn = "/icons/usuario.png";
@@ -15,8 +19,7 @@ public class LoginFrm extends javax.swing.JFrame {
 
     public LoginFrm() {
         initComponents();
-//        mBd = new BD("login", "root", "");
-//        mEncoder = new encoder();
+        mBd = new BDEmpleados("login", "root", "");
 
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -28,7 +31,7 @@ public class LoginFrm extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
+        txtCedula = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblRegistro = new javax.swing.JLabel();
@@ -46,12 +49,12 @@ public class LoginFrm extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Login");
 
-        txtUsuario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        txtCedula.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtCedula.setForeground(new java.awt.Color(102, 102, 102));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Usuario");
+        jLabel3.setText("Cedula");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,7 +92,7 @@ public class LoginFrm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
@@ -116,7 +119,7 @@ public class LoginFrm extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -166,59 +169,39 @@ public class LoginFrm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-//        usuario mUsuario = new usuario();
-//        String Pasword = "";
-//        String admin = "Administrador";
-//        String secre = "Secretaria";
-//        if (!txtUsuario.getText().trim().equals("") && !txtPassword.getText().trim().equals("")) {
-//            if (mBd.Conectar()) {
-//                //validar usuario
-//                if (mBd.ExisteUsuario(txtUsuario.getText().trim())) {
-//                    mUsuario = mBd.GetUsuario(txtUsuario.getText().trim());
-//
-//                    Pasword = mEncoder.ecnode(txtPassword.getText().trim());
-//
-//                if (mBd.ExistePerfilSecretaria(txtUsuario.getText().trim())) {
-//                        principal p = new principal();
-//                    p.setVisible(true);
-//                    this.dispose();
-//                }
-//                else {
-//                    //JOptionPane.showMessageDialog(null, "secre");
-//                    
-//                    
-//                }
-//                if (mBd.ExistePerfilAdmin(txtUsuario.getText().trim())) {
-//                        Reportes re = new Reportes();
-//                    re.setVisible(true);
-//                    this.dispose();
-//                }
-//                else {
-//                   // JOptionPane.showMessageDialog(null, "secre");
-//                    
-//                    
-//                }
-////                } else {
-////                    JOptionPane.showMessageDialog(null, "No existe perfil");
-////                    txtUsuario.setText("");
-////                    txtPassword.setText("");
-////                }
-////                } else {
-////                    JOptionPane.showMessageDialog(null, "No existe usuario");
-////                    txtUsuario.setText("");
-////                    txtPassword.setText("");
-////                }
-//                } else {
-//                    JOptionPane.showMessageDialog(null, "No existe ussurio");
-//                }
-//            } else {
-//                JOptionPane.showMessageDialog(null, "Error al conectar");
-//            }
-//
-//        } else {
-//            JOptionPane.showMessageDialog(null, "Ingrese el usuario y contraseña");
-//        }
+ empleados mUsuario = new empleados();
+        String Pasword = "";
+        if (!txtCedula.getText().trim().equals("") && !txtPassword.getText().trim().equals("")) {
+            if (mBd.Conectar()) {
+                //validar usuario
+                if (mBd.ExisteUsuario(txtCedula.getText().trim())) {
+                    mUsuario = mBd.GetUsuarioEmp(txtCedula.getText().trim());
+                    Pasword = txtPassword.getText().trim();
+                    if (Pasword.equals(mUsuario.getContrasena_emp()) && mBd.ExistePerfilGerente(txtCedula.getText().trim()) ) {
+                        VentanaGerente ger = new VentanaGerente();
+                        ger.setVisible(true);
+                        this.dispose();
+                    }else{
+                        
+                    }
+                    if (Pasword.equals(mUsuario.getContrasena_emp()) && mBd.ExistePerfilVendedor(txtCedula.getText().trim())) {
+                        VentanaVendedor ven = new VentanaVendedor();
+                        ven.setVisible(true);
+                        this.dispose();
+                    } else {
+                        // JOptionPane.showMessageDialog(null, "secre");
 
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "No existe usurio");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al conectar");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Ingrese el usuario y contraseña");
+        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -268,7 +251,7 @@ public class LoginFrm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblRegistro;
+    private javax.swing.JTextField txtCedula;
     private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

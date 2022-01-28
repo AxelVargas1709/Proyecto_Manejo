@@ -8,7 +8,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class RegistroFrm extends javax.swing.JFrame {
+public class RegistroFrm extends javax.swing.JInternalFrame {
 
     DefaultComboBoxModel modeloCB = new DefaultComboBoxModel();
     private String imgPathLogo = "/icons/logo.png";
@@ -21,7 +21,7 @@ public class RegistroFrm extends javax.swing.JFrame {
 //        mValidaciones = new Validaciones();
         this.setSize(778, 581);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        //this.setLocationRelativeTo(null);
         cargarCombo();
     }
 

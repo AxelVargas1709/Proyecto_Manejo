@@ -33,6 +33,7 @@ public class VentanaGerente extends javax.swing.JFrame {
         jmenuEmpleados = new javax.swing.JMenuItem();
         jmenuProductos = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,11 +64,25 @@ public class VentanaGerente extends javax.swing.JFrame {
         jMenu1.add(jmenuEmpleados);
 
         jmenuProductos.setText("Productos");
+        jmenuProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmenuProductosActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmenuProductos);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Salir");
+
+        jMenuItem1.setText("Salir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -92,7 +107,24 @@ public class VentanaGerente extends javax.swing.JFrame {
 
     private void jmenuEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuEmpleadosActionPerformed
         // TODO add your handling code here:
+        RegistroFrm est1 = new RegistroFrm();
+        jdskPrincipal.add(est1);
+        est1.setVisible(true);
     }//GEN-LAST:event_jmenuEmpleadosActionPerformed
+
+    private void jmenuProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuProductosActionPerformed
+        // TODO add your handling code here:
+        registroproductos reg = new registroproductos();
+        jdskPrincipal.add(reg);
+        reg.setVisible(true);
+    }//GEN-LAST:event_jmenuProductosActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        LoginFrm ven = new LoginFrm();
+        ven.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,6 +166,7 @@ public class VentanaGerente extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JDesktopPane jdskPrincipal;
     private javax.swing.JMenuItem jmenuEmpleados;
     private javax.swing.JMenuItem jmenuProductos;
