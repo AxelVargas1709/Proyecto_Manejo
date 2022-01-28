@@ -1,6 +1,6 @@
 package BaseDd;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+//import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -25,7 +25,7 @@ public class BDClientes {
         this.user = user;
         this.password = password;
     }
-    
+
     public boolean Conectar() {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -48,18 +48,14 @@ public class BDClientes {
         try {
             mStatement = mConection.createStatement();
             mStatement.execute("INSERT INTO clientes (CED_CLI,NOM_CLI,APE_CLI,TELF_CLI,DIR_CLI)"
-                    + " VALUES ('" + Usuemp.getCed_cli()+ "', '" + Usuemp.getNom_cli()+ "','" + Usuemp.getApe_cli()
-                    + "','" + Usuemp.getTel_cli()+ "','" + Usuemp.getDir_cli()+"')");
+                    + " VALUES ('" + Usuemp.getCed_cli() + "', '" + Usuemp.getNom_cli() + "','" + Usuemp.getApe_cli()
+                    + "','" + Usuemp.getTel_cli() + "','" + Usuemp.getDir_cli() + "')");
             return true;
-             }catch(MySQLIntegrityConstraintViolationException e){
-            JOptionPane.showMessageDialog(null, "Cedula existente");
-            
-        
         } catch (SQLException e) {
-            System.err.println(e.toString());
-            
+            JOptionPane.showMessageDialog(null, "Cedula existente");
+
+            return false;
         }
-        return false;
     }
 
     public clientes GetUsuarioEmp(String cedulaEmp) {
@@ -91,16 +87,16 @@ public class BDClientes {
             return false;
         }
     }
- 
+
     public Boolean ExistePerfilGerente(String cedula) {
         try {
             mStatement = mConection.createStatement();
             mResultSet = mStatement.executeQuery("SELECT * FROM clientes WHERE CARG_EMP= 'GERENTE' AND CED_EMP='" + cedula + "'");
             return mResultSet.next();
-       
-        }catch (SQLException ex) {
+
+        } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
-            
+
         }
         return false;
     }
