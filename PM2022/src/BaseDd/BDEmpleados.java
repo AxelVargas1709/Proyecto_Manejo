@@ -1,7 +1,7 @@
 package BaseDd;
 
 import BaseDd.empleados;
-//import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -52,12 +52,17 @@ public class BDEmpleados {
                     + " VALUES ('" + Usuemp.getCedula_emp()+ "', '" + Usuemp.getNombre_emp()+ "','" + Usuemp.getApellido_emp()
                     + "','" + Usuemp.getContrasena_emp()+ "','" + Usuemp.getCargo_emp()+ "','" + Usuemp.getTelefono_emp()+ "','" + Usuemp.getSueldo_emp()+ "')");
             return true;
-             }catch(SQLException e){
-            JOptionPane.showMessageDialog(null, "Cedula existente");    
+             }catch(MySQLIntegrityConstraintViolationException e){
+            JOptionPane.showMessageDialog(null, "Cedula existente");
+            
+        
+        } catch (SQLException e) {
+            System.err.println(e.toString());
+            
+        }
         return false;
     }
-    }
-    
+
     public empleados GetUsuarioEmp(String cedulaEmp) {
         empleados mUsuario = null;
         try {
